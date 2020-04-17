@@ -1,0 +1,3 @@
+当没有在webpack.config.js中配置raw-loader时，可通过添加 raw-loader! 指明使用rawloader，如要内联引用本文件， 使用 import test from 'raw-loader!./raw-loader-test.txt';
+如已经给本文件配置了loader，则再加两个叹号，表明使用rawloader：import test from '!!raw-loader!./raw-loader-test.txt';
+

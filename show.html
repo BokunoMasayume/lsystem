@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>演示</title>
+    <style>
+        html, body{
+            height: 100%;
+            padding:0;
+            margin:0;
+
+        }
+        
+        .content{
+            display:flex;
+            height: 100%;
+        }
+        #controller{
+            flex: 0 1 300px;
+            background-color: blanchedalmond;
+            padding:20px;
+
+            /* width:20% */
+        }
+        #view{
+            flex : 1 1 400px;
+        }
+        .prop{
+            margin:10px 0;
+            display:flex;
+        }
+        .btn{
+            margin:20px auto ;
+            background-color: aqua;
+            color:aliceblue;
+            width:50%;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .btn:hover{
+            background-color: aquamarine;
+            cursor:pointer;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class = "content">
+        <div id="controller">
+            <div class="prop">
+               <div>初始：</div>
+                <div>
+                    <input type="text" v-model = "upperCaseStarter" >
+                </div> 
+            </div>
+            <div class="prop">
+                <div>规则：</div> 
+                <div>
+                    <textarea  v-model="rules" cols="30" rows="10"></textarea>
+
+                </div>
+            </div>
+            <div class="prop">
+                <div>base.x：</div> 
+                <div>
+                    <input type="text" v-model.number = "base.x" >
+
+                </div>
+            </div>
+            <div class="prop">
+                <div>base.y：</div> 
+                <div>
+                    <input type="text" v-model.number = "base.y" >
+
+                </div>
+            </div>
+            <div class="prop">
+                <div>迭代次数：</div> 
+                <div>
+                    <input type="text" v-model.number = "level" >
+
+                </div>
+            </div>
+            <div class="prop">
+                <div>size：</div> 
+                <div>
+                    <input type="text" v-model.number = "options.size" >
+
+                </div>
+            </div>
+            <div class="prop">
+                <div>size-growth：</div> 
+                <div>
+                    <input type="text" v-model.number = "options.sizeGrowth" >
+
+                </div>
+            </div>
+            <div class="prop">
+                <div>angle：</div> 
+                <div>
+                    <input type="text" v-model.number = "options.angle" >
+
+                </div>
+            </div>
+            <div class="prop">
+                <div>angle-growth：</div> 
+                <div>
+                    <input type="text" v-model.number = "options.angleGrowth" >
+
+                </div>
+            </div>
+
+            <div>
+                <div class = "btn" @click="rerender()">
+                    修改
+                </div>
+            </div>
+        </div>
+        <div id="view">
+            <canvas id="canvas" ></canvas>
+        </div>
+    </div>
+
+    <script>
+        // let canvas = document.getElementsByTagName('canvas')[0];
+        // let gl = canvas.getContext('webgl2');
+        // if(!gl){
+        //     alert('no webgl 2 !')
+        // }
+    </script>
+    <script src="./build/bundle.js"></script>
+</body>
+</html>
